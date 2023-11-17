@@ -1,3 +1,9 @@
+<script setup>
+  const toTop = (() => {
+    document.body.scrollTop = 0
+  })()
+</script>
+
 <template>
   <main class="flex flex-col">
     <h2 class="text-center text-xl p-5 font-black">Projetos Principais</h2>

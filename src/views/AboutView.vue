@@ -1,5 +1,11 @@
+<script setup>
+  const toTop = (() => {
+    document.documentElement.scrollTop = 0
+  })()
+</script>
+
 <template>
-  <main class="flex flex-col h-full min-h-screen">
+  <main class="flex flex-col">
     <section class="flex justify-center items-center flex-col p-3 gap-2">
       <h2 class="text-shark text-xl font-bold md:text-4xl">About Me</h2>
       <p class="md:text-lg md:w-full">I'm Lucas, an aspiring programmer on a <strong>continuous learning journey</strong>. Currently, I'm dedicated to honing my skills in programming and exploring the diverse realms of software development.</p>
