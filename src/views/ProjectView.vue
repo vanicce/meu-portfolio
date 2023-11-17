@@ -1,7 +1,3 @@
-<script setup>
-import floatingbutton from '../components/floatingbutton.vue';
-</script>
-
 <template>
   <main class="flex flex-col">
     <h2 class="text-center text-xl p-5 font-black">Projetos Principais</h2>
@@ -22,7 +18,6 @@ import floatingbutton from '../components/floatingbutton.vue';
         <h3>Nome do Projeto 4</h3>
         <p>Breve descrição do Projeto 4.</p>
       </div>
-      <floatingbutton />
     </section>
   </main>
 </template>

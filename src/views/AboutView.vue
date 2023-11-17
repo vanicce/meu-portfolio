@@ -1,9 +1,4 @@
-<script setup>
-  import floatingbutton from '../components/floatingbutton.vue';
-</script>
-
 <template>
-  <floatingbutton/>
   <main class="flex flex-col h-full min-h-screen">
     <section class="flex justify-center items-center flex-col p-3 gap-2">
       <h2 class="text-shark text-xl font-bold md:text-4xl">About Me</h2>
