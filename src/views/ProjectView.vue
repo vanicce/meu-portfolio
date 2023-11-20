@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, onMounted, onBeforeMount } from 'vue'
+import { reactive, onMounted, onBeforeMount, ref } from 'vue'
 import projectCard from '../components/projectCard.vue';
 
 
@@ -11,7 +11,6 @@ const defineProjects = async () => {
   try {
     const response = await fetch('https://api.github.com/users/lucwx/repos')
     state.projects = await response.json()
-    console.log(state.projects);
   } catch (error) {
     console.log(error);
     alert('an error ocurred in repos')
@@ -31,7 +30,7 @@ onMounted(() => {
   <main class="flex flex-col px-4 md:px-14">
     <h2 class="text-center text-xl p-5 font-black md:text-4xl">Main Projects</h2>
     <section class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10 ">
-      <projectCard v-if="state.projects.length > 0" v-for="repo in state.projects" :name="repo.name" :description="repo.description" :language="repo.language" :homepage="repo.homepage" :html_url="repo.html_url" :topics="repo.topics" :imgSrc="'../assets/' + repo.name + '.png'" />
+      <projectCard v-if="state.projects.length > 0" v-for="repo in state.projects" :name="repo.name" :description="repo.description" :language="repo.language" :homepage="repo.homepage" :html_url="repo.html_url" :topics="repo.topics" />
       <div v-else>
         <p>No data available.</p>
       </div>
