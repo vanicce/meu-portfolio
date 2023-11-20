@@ -5,13 +5,14 @@ const props = defineProps({
   language: '',
   html_url: '',
   homepage: '',
-  topics: ''
+  topics: '',
+  imgSrc: ''
 })
 </script>
 
 <template>
   <div class="border-2 border-gray-300 p-3 rounded-md mb-4 flex flex-col justify-between md:hover:scale-110 ease-in-out duration-300">
-    <img class="rounded-md border border-gray-300 md:mix-blend-luminosity md:hover:mix-blend-normal" :src="'./src/assets/' + props.name +'.png'" alt="">
+    <img class="rounded-md border border-gray-300 md:mix-blend-luminosity md:hover:mix-blend-normal" :src="props.imgSrc" alt="">
     <div class="flex flex-col items-center py-3">
       <h2 class="font-bold uppercase">{{ props.name }}</h2>
       <p v-if="props.description !== undefined" class=" overflow-scroll md:overflow-visible">{{ props.description }}</p>
