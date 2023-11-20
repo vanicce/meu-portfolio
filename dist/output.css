@@ -583,6 +583,10 @@ video {
   margin-bottom: 1rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -667,6 +671,10 @@ video {
 
 .gap-3 {
   gap: 0.75rem;
+}
+
+.self-center {
+  align-self: center;
 }
 
 .overflow-scroll {
@@ -822,6 +830,10 @@ video {
   text-transform: uppercase;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .text-shark {
   --tw-text-opacity: 1;
   color: rgb(16 15 15 / var(--tw-text-opacity));
@@ -895,6 +907,10 @@ video {
 @media (min-width: 768px) {
   .md\:left-\[90\%\] {
     left: 90%;
+  }
+
+  .md\:mb-10 {
+    margin-bottom: 2.5rem;
   }
 
   .md\:grid {
