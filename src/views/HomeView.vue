@@ -1,35 +1,70 @@
 <script setup>
+import { onBeforeUnmount, onBeforeMount } from 'vue'
+
 let spotify = "https://open.spotify.com/intl-pt/artist/5INjqkS1o8h1imAzPqGZBb"
 
-  // document.addEventListener('mousemove', (event) => {
-  //   const mouseX = event.clientX / window.innerWidth
-  //   const mouseY = event.clientY / window.innerHeight
+const handleMouse = (e) => {
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
 
-  //   document.querySelector('main').style.background = `radial-gradient(circle at ${mouseX * 100}% ${mouseY * 100}%, red, rgb(245 245 244) )`
-  // })
-  function update(e){
-  var x = e.clientX || e.touches[0].clientX
-  var y = e.clientY || e.touches[0].clientY
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
 
-  document.documentElement.style.setProperty('--cursorX', x + 'px')
-  document.documentElement.style.setProperty('--cursorY', y + 'px')
+  const deltaX = mouseX - centerX;
+  const deltaY = mouseY - centerY;
+
+  const angleX = deltaY / centerY * 50;
+  const angleY = -deltaX / centerX * 50;
+
+  document.getElementById('elemento').style.transform = `rotate3d(1, 0, 0, ${angleX}deg) rotate3d(0, 1, 0, ${angleY}deg)`;
 }
 
-document.addEventListener('mousemove',update)
-document.addEventListener('touchmove',update)
+document.addEventListener('mousemove', handleMouse)
+
+onBeforeMount(() => {
+  document.body.scrollTop = 0
+}),
+
+onBeforeUnmount(() => {
+  document.removeEventListener('mousemove', handleMouse)
+})
+
 </script>
 
-<template >
+<template>
   <main class="flex flex-col items-center p-4">
-    <!-- <div id="circle" class="w-1 h-1 absolute" :class="['top-{{ mouseX }}', 'left-{{ mouseY }}']"></div> -->
-    <div class="w-56 h-56 text-4xl font-bold overflow-clip rounded-full ring-2 ring-black ring-offset-2 my-3">
-      <img class="" src="../assets/eu3.jpeg" alt="">
+    <div class="box border-4 rounded-xl border-transparent w-56 h-56 my-4" id="elemento">
+      <img class="select-none rounded-xl" src="../assets/eu3.jpeg" alt="">
     </div>
     <div>
       <h1 class="text-2xl md:text-4xl font-black text-center">Hi, my name is Lucas.</h1>
     </div>
     <p class="text-lg md:text-2xl text-center">I love programming, games and
-    <a class="underline decoration-slate-500 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500" target="_blank" :href="spotify">Tame Impala.</a> Here you will find some projects and learn a little about me.</p>
-    <router-link class="border border-black rounded-md p-2 px-4 m-4 transition hover:scale-110 font-bold s text-lg" to="/about">Enjoy!</router-link>
+      <a class="underline decoration-slate-500 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+        target="_blank" :href="spotify">Tame Impala.</a> Here you will find some projects and learn a little about me.
+    </p>
+    <router-link class="border border-black rounded-md p-2 px-4 m-4 transition hover:scale-110 font-bold md:text-lg"
+      to="/about">Enjoy!</router-link>
   </main>
 </template>
+
+<style scoped>
+.box {
+  background: linear-gradient(var(--angle),
+      rgb(236 72 153),
+      #8b5cf6) border-box;
+  animation: 1s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+</style>
