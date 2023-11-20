@@ -9,7 +9,7 @@ const openMenu = () => {
 </script>
 
 <template>
-  <header class="bg-stone-100 flex flex-col w-full border-b border-gray-300">
+  <header class="bg-stone-100 flex flex-col w-full border-b border-gray-300 z-50">
     <div class="flex justify-between items-center w-full p-3">
       <p class="font-semibold">Lucas S. Silva</p>
       <button class="transition ease-in-out hover:scale-110" @click="openMenu()">

@@ -1,7 +1,10 @@
 <script setup>
-  const toTop = (() => {
-    document.documentElement.scrollTop = 0
-  })()
+import { onBeforeMount } from 'vue'
+
+ onBeforeMount(() => {
+  document.body.scrollTop = 0
+})
+
 </script>
 
 <template>

@@ -7,7 +7,7 @@ const scrolling = () => {
   document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ? scroll.value = true : scroll.value = false
 }
 
-window.onscroll = () => { scrolling() }
+window.onscroll = () => scrolling()
 
 const toTop = () => {
   document.documentElement.scrollTop = 0
