@@ -1,28 +1,38 @@
 <script setup>
-  const toTop = (() => {
-    document.body.scrollTop = 0
-  })()
+import { reactive, onMounted, onBeforeMount } from 'vue'
+import projectCard from '../components/projectCard.vue';
+
+
+const state = reactive({
+  projects: []
+})
+
+const defineProjects = async () => {
+  try {
+    const response = await fetch('https://api.github.com/users/lucwx/repos')
+    state.projects = await response.json()
+  } catch (error) {
+    console.log(error);
+    alert('an error ocurred in repos')
+  }
+}
+
+onBeforeMount(() => {
+  document.body.scrollTop = 0
+})
+
+onMounted(() => {
+  defineProjects()
+})
 </script>
 
 <template>
-  <main class="flex flex-col">
-    <h2 class="text-center text-xl p-5 font-black">Projetos Principais</h2>
-    <section class="flex h-screen items-center flex-col">
-      <div class="flex flex-col border-2 rounded-md p-3 m-3">
-        <h3>GitHub Card</h3>
-        <p>Breve descrição do Projeto 1.</p>
-      </div>
-      <div class="flex flex-col border-2 rounded-md p-3 m-3">
-        <h3>Pomodoro Timer</h3>
-        <p>Breve descrição do Projeto 2.</p>
-      </div>
-      <div class="flex flex-col border-2 rounded-md p-3 m-3">
-        <h3>Nome do Projeto 3</h3>
-        <p>Breve descrição do Projeto 3.</p>
-      </div>
-      <div class="flex flex-col border-2 rounded-md p-3 m-3">
-        <h3>Nome do Projeto 4</h3>
-        <p>Breve descrição do Projeto 4.</p>
+  <main class="flex flex-col px-14">
+    <h2 class="text-center text-xl p-5 font-black md:text-4xl">Main Projects</h2>
+    <section class="md:grid sm:grid-cols-2 md:grid-cols-3 gap-10 ">
+      <projectCard v-if="state.projects.length > 0" v-for="repo in state.projects" :name="repo.name" :description="repo.description" :language="repo.language" :homepage="repo.homepage" :html_url="repo.html_url" />
+      <div v-else>
+        <p>No data available.</p>
       </div>
     </section>
   </main>
