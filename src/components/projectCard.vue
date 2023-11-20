@@ -5,20 +5,23 @@ const props = defineProps({
   language: '',
   html_url: '',
   homepage: '',
-  imgSrc: ''
+  topics: ''
 })
 </script>
 
 <template>
-  <div class="border-2 border-gray-300 p-3 rounded-md mb-4 flex flex-col justify-between hover:scale-110 ease-in-out duration-300">
-    <img class="rounded-md mix-blend-luminosity hover:mix-blend-normal" src="../assets/projeto1.png" alt="">
+  <div class="border-2 border-gray-300 p-3 rounded-md mb-4 flex flex-col justify-between md:hover:scale-110 ease-in-out duration-300">
+    <img class="rounded-md border border-gray-300 md:mix-blend-luminosity md:hover:mix-blend-normal" :src="'./' + props.name + '.png'" alt="">
     <div class="flex flex-col items-center py-3">
       <h2 class="font-bold uppercase">{{ props.name }}</h2>
       <p v-if="props.description !== undefined" class=" overflow-scroll md:overflow-visible">{{ props.description }}</p>
+      <div class="flex flex-wrap py-1 text-stone-500">
+        <p v-for="topics in props.topics">{{ topics }}, </p>
+      </div>
       <p class="text-stone-500" v-if="props.language !== null">Main Language: {{ props.language }}</p>
     </div>
     <div class="flex gap-2 justify-end items-center">
-      <a class="hover:scale-110 transition" :href="props.html_url" target="_blank" title="link to github props">
+      <a class="hover:scale-110 transition" :href="props.html_url" target="_blank" title="link to github repository">
         <img width="30" src="../assets/github.svg" alt="">
       </a>
       <a class="hover:scale-110 transition" v-if="props.homepage !== null" :href="props.homepage" target="_blank"
