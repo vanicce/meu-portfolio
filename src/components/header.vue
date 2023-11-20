@@ -13,7 +13,7 @@ const openMenu = () => {
     <div class="flex justify-between items-center w-full p-3">
       <p class="font-semibold">Lucas S. Silva</p>
       <button class="transition ease-in-out hover:scale-110" @click="openMenu()">
-        <img width="25" :src="[open ? '../assets/github.svg' : '../assets/linkedin.svg']" alt="menu">
+        <img width="25" :src="[open ? './src/assets/github.svg' : './src/assets/linkedin.svg']" alt="menu">
       </button>
     </div>
     <nav class="duration-[400ms] ease-in-out absolute bg-stone-100 border-b border-gray-300 w-full flex flex-col items-center gap-2 p-2" :class="[open ? 'top-12 ' : '-top-96']">
