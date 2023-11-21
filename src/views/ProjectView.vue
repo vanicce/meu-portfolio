@@ -11,7 +11,6 @@ const defineProjects = async () => {
     const response = await fetch('https://api.github.com/users/lucwx/repos')
     state.projects = await response.json()
   } catch (error) {
-    console.log(error);
     alert('an error ocurred in repos')
   }
 }
@@ -27,11 +26,14 @@ onMounted(() => {
       <h2 class="text-center text-xl p-5 font-black md:text-4xl">Main Projects</h2>
       <p class="self-center italic">All projects listed here are updated via the GitHub API (README.md too).</p>
     </div>
-    <section class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10 md:mb-10">
+    <section>
       <div v-if="error">
         <p>No data available.</p>
       </div>
-      <projectCard v-else-if="state.projects.length > 0" v-for="repo in state.projects" :name="repo.name" :description="repo.description" :language="repo.language" :homepage="repo.homepage" :html_url="repo.html_url" :topics="repo.topics" />
+      <div v-else-if="state.projects.length > 0" class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10 md:mb-10">
+        <projectCard v-for="repo in state.projects" :name="repo.name" :description="repo.description" :language="repo.language" :homepage="repo.homepage" :html_url="repo.html_url" :topics="repo.topics" />
+        <projectCard class="italic" name="More Projects soon..."/>
+      </div>
       <div v-else class="flex justify-center">
         <h1 class="text-5xl self-center">loading...</h1>
       </div>
