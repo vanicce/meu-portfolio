@@ -1,12 +1,3 @@
-<script setup>
-import { onBeforeMount } from 'vue'
-
- onBeforeMount(() => {
-  document.body.scrollTop = 0
-})
-
-</script>
-
 <template>
   <main class="flex flex-col">
     <section class="flex justify-center items-center flex-col p-3 md:px-16 gap-2">

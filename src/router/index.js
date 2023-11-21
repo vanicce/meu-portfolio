@@ -22,7 +22,10 @@ const router = createRouter({
       name: 'projects',
       component: ProjectView
     },
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { top: 0 }
+  }
 })
 
 export default router

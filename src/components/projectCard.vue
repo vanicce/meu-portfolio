@@ -16,7 +16,7 @@ const props = defineProps({
       <h2 class="font-bold uppercase">{{ props.name }}</h2>
       <p v-if="props.description !== undefined" class=" overflow-scroll md:overflow-visible">{{ props.description }}</p>
       <div class="flex flex-wrap py-1 text-stone-500">
-        <p v-for="topics in props.topics">{{ topics }}, </p>
+        <p v-for="(topic, index) in props.topics" :key="index">{{ index > 0 ? ', ' : '' }}{{ topic }}</p>
       </div>
       <p class="text-stone-500" v-if="props.language !== null">Main Language: {{ props.language }}</p>
     </div>
