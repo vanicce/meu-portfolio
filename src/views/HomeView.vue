@@ -1,6 +1,4 @@
 <script setup>
-import { onBeforeUnmount } from 'vue'
-
 let spotify = "https://open.spotify.com/intl-pt/artist/5INjqkS1o8h1imAzPqGZBb"
 
 const handleMouse = (e) => {
@@ -19,16 +17,10 @@ const handleMouse = (e) => {
   document.getElementById('elemento').style.transform = `rotate3d(1, 0, 0, ${angleX}deg) rotate3d(0, 1, 0, ${angleY}deg)`;
 }
 
-document.addEventListener('mousemove', handleMouse)
-
-onBeforeUnmount(() => {
-  document.removeEventListener('mousemove', handleMouse)
-})
-
 </script>
 
 <template>
-  <main class="flex flex-col items-center p-4">
+  <main @mousemove="handleMouse" class="flex flex-col items-center p-4">
     <div class="box border-4 rounded-xl border-transparent w-56 h-56 my-4" id="elemento">
       <img class="select-none rounded-xl" src="../assets/eu3.jpeg" alt="">
     </div>
