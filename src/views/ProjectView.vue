@@ -1,7 +1,6 @@
 <script setup>
-import { reactive, onMounted, onBeforeMount, ref } from 'vue'
+import { reactive, onMounted } from 'vue'
 import projectCard from '../components/projectCard.vue';
-
 
 const state = reactive({
   projects: []
@@ -16,10 +15,6 @@ const defineProjects = async () => {
     alert('an error ocurred in repos')
   }
 }
-
-onBeforeMount(() => {
-  document.body.scrollTop = 0
-})
 
 onMounted(() => {
   defineProjects()

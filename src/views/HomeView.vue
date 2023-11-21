@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeUnmount, onBeforeMount } from 'vue'
+import { onBeforeUnmount } from 'vue'
 
 let spotify = "https://open.spotify.com/intl-pt/artist/5INjqkS1o8h1imAzPqGZBb"
 
@@ -20,10 +20,6 @@ const handleMouse = (e) => {
 }
 
 document.addEventListener('mousemove', handleMouse)
-
-onBeforeMount(() => {
-  document.body.scrollTop = 0
-}),
 
 onBeforeUnmount(() => {
   document.removeEventListener('mousemove', handleMouse)
