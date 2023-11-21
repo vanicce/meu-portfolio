@@ -1,3 +1,10 @@
+<script setup>
+import scrollComponent from '../components/scrollComponent.vue'
+
+const techs = ['HTML5', 'CSS3', 'JavaScript', 'vue', 'react', 'tailwind', 'mySQL']
+
+</script>
+
 <template>
   <main class="flex flex-col">
     <section class="flex justify-center items-center flex-col p-3 md:px-16 gap-2">
@@ -9,32 +16,12 @@
 
     <section class="flex flex-col items-center ">
       <h2 class="text-shark text-xl md:text-4xl font-bold">My Habilities:</h2>
-      <ul class="flex flex-wrap md:justify-center md:p-4 w-screen md:w-full px-4 gap-3 select-none">
-        <div class="flex">
-          <img class="w-5" src="../assets/html5.svg" alt="">
-          <li class="text-lg">HTML</li>
+      <div class="scroller w-full md:w-2/4 overflow-hidden">
+        <div class="flex flex-nowrap w-fit p-4 px-4 gap-10 scroller_inner">
+          <scrollComponent class="border border-zinc-400 px-4 rounded-lg items-center justify-center" v-for="tech in techs" :tech="tech"/>
+          <scrollComponent class="border border-zinc-400 px-4 rounded-lg items-center justify-center" v-for="tech in techs" :tech="tech"/>
         </div>
-        <div class="flex">
-          <img class="w-5" src="../assets/css3.svg" alt="">
-          <li class="text-lg">CSS</li>
-        </div>
-        <div class="flex">
-          <img class="w-5" src="../assets/javascript.svg" alt="">
-          <li class="text-lg">JavaScript</li>
-        </div>
-        <div class="flex">
-          <img class="w-5" src="../assets/vue.svg" alt="">
-          <li class="text-lg">Vue.js</li>
-        </div>
-        <div class="flex">
-          <img class="w-5" src="../assets/react.svg" alt="">
-          <li class="text-lg">React</li>
-        </div>
-        <div class="flex">
-          <img class="w-5" src="../assets/mysql.svg" alt="">
-          <li class="text-lg">MySQL</li>
-        </div>
-      </ul>
+      </div>
     </section>
 
     <section class="md:px-16">
@@ -44,3 +31,18 @@
     </section>
   </main>
 </template>
+
+<style>
+.scroller_inner {
+  animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translate(0%);
+  }
+  to {
+    transform: translate(-50%);
+  }
+}
+</style>
