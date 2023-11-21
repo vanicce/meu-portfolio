@@ -16,16 +16,19 @@ const techs = ['HTML5', 'CSS3', 'JavaScript', 'vue', 'react', 'tailwind', 'mySQL
 
     <section class="flex flex-col items-center ">
       <h2 class="text-shark text-xl md:text-4xl font-bold">My Habilities:</h2>
-      <div class="scroller w-full md:w-2/4 overflow-hidden">
-        <div class="flex flex-nowrap w-fit p-4 px-4 gap-10 scroller_inner">
-          <scrollComponent class="border border-zinc-400 px-4 rounded-lg items-center justify-center" v-for="tech in techs" :tech="tech"/>
-          <scrollComponent class="border border-zinc-400 px-4 rounded-lg items-center justify-center" v-for="tech in techs" :tech="tech"/>
+      <div class="w-full md:w-2/4 overflow-hidden">
+        <div class="scroller_inner flex flex-nowrap w-fit p-4 px-4 gap-10 ">
+          <scrollComponent v-for="tech in techs" :tech="tech"/>
+          <scrollComponent v-for="tech in techs" :tech="tech"/>
         </div>
       </div>
     </section>
 
-    <section class="md:px-16">
-      <p class="p-3 md:text-lg">Throughout my learning journey, I have developed <router-link to="/projects" class="font-black underline" >projects</router-link>. Each project represents a significant step in my evolution as a programmer, showcasing my ability to apply learned concepts in practical scenarios.</p>
+    <section class="md:px-16 flex flex-col">
+      <p class="p-3 md:text-lg">Throughout my learning journey, I have developed projects. Each project represents a significant step in my evolution as a programmer, showcasing my ability to apply learned concepts in <strong>practical scenarios.</strong></p>
+
+      <p class="italic md:text-lg p-3 self-center">To see my projects click here!</p>
+      <router-link to="/projects" class="border p-2 rounded-md m-4 border-black text-center font-bold md:w-1/12 md:self-center md:text-lg transition hover:scale-110">Projects</router-link>
 
       <p class="p-3 md:text-lg"><strong>I am open to collaboration, learning opportunities, and sharing experiences</strong>. Feel free to reach out to me through <a href="" class="underline">GitHub</a> or <a href="" class="underline">Linkedin</a>. Thank you for visiting my portfolio, and I look forward to sharing my programming journey with you!</p>
     </section>
@@ -35,6 +38,10 @@ const techs = ['HTML5', 'CSS3', 'JavaScript', 'vue', 'react', 'tailwind', 'mySQL
 <style>
 .scroller_inner {
   animation: scroll 30s linear infinite;
+}
+
+.scroller_inner:hover {
+  animation-play-state: paused;
 }
 
 @keyframes scroll {
