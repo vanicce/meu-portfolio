@@ -1,3 +1,10 @@
+<script setup>
+import scrollComponent from '../components/scrollComponent.vue'
+
+const techs = ['HTML5', 'CSS3', 'JavaScript', 'vue', 'react', 'tailwind', 'mySQL']
+
+</script>
+
 <template>
   <main class="flex flex-col">
     <section class="flex justify-center items-center flex-col p-3 md:px-16 gap-2">
@@ -9,38 +16,40 @@
 
     <section class="flex flex-col items-center ">
       <h2 class="text-shark text-xl md:text-4xl font-bold">My Habilities:</h2>
-      <ul class="flex flex-wrap md:justify-center md:p-4 w-screen md:w-full px-4 gap-3 select-none">
-        <div class="flex">
-          <img class="w-5" src="../assets/html5.svg" alt="">
-          <li class="text-lg">HTML</li>
+      <div class="w-full md:w-2/4 overflow-hidden">
+        <div class="scroller_inner flex flex-nowrap w-fit p-4 px-4 gap-10 ">
+          <scrollComponent v-for="tech in techs" :tech="tech"/>
+          <scrollComponent v-for="tech in techs" :tech="tech"/>
         </div>
-        <div class="flex">
-          <img class="w-5" src="../assets/css3.svg" alt="">
-          <li class="text-lg">CSS</li>
-        </div>
-        <div class="flex">
-          <img class="w-5" src="../assets/javascript.svg" alt="">
-          <li class="text-lg">JavaScript</li>
-        </div>
-        <div class="flex">
-          <img class="w-5" src="../assets/vue.svg" alt="">
-          <li class="text-lg">Vue.js</li>
-        </div>
-        <div class="flex">
-          <img class="w-5" src="../assets/react.svg" alt="">
-          <li class="text-lg">React</li>
-        </div>
-        <div class="flex">
-          <img class="w-5" src="../assets/mysql.svg" alt="">
-          <li class="text-lg">MySQL</li>
-        </div>
-      </ul>
+      </div>
     </section>
 
-    <section class="md:px-16">
-      <p class="p-3 md:text-lg">Throughout my learning journey, I have developed <router-link to="/projects" class="font-black underline" >projects</router-link>. Each project represents a significant step in my evolution as a programmer, showcasing my ability to apply learned concepts in practical scenarios.</p>
+    <section class="md:px-16 flex flex-col">
+      <p class="p-3 md:text-lg">Throughout my learning journey, I have developed projects. Each project represents a significant step in my evolution as a programmer, showcasing my ability to apply learned concepts in <strong>practical scenarios.</strong></p>
+
+      <p class="italic md:text-lg p-3 self-center">To see my projects click here!</p>
+      <router-link to="/projects" class="border p-2 rounded-md m-4 border-black text-center font-bold md:w-1/12 md:self-center md:text-lg transition hover:scale-110">Projects</router-link>
 
       <p class="p-3 md:text-lg"><strong>I am open to collaboration, learning opportunities, and sharing experiences</strong>. Feel free to reach out to me through <a href="" class="underline">GitHub</a> or <a href="" class="underline">Linkedin</a>. Thank you for visiting my portfolio, and I look forward to sharing my programming journey with you!</p>
     </section>
   </main>
 </template>
+
+<style>
+.scroller_inner {
+  animation: scroll 30s linear infinite;
+}
+
+.scroller_inner:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translate(0%);
+  }
+  to {
+    transform: translate(-50%);
+  }
+}
+</style>
