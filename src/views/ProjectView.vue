@@ -31,7 +31,7 @@ onMounted(() => {
         <p>No data available.</p>
       </div>
       <div v-else-if="state.projects.length > 0" class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10 md:mb-10">
-        <projectCard v-for="repo in state.projects" :name="repo.name" :description="repo.description" :language="repo.language" :homepage="repo.homepage" :html_url="repo.html_url" :topics="repo.topics" />
+        <projectCard v-for="(repo, index) in state.projects" :key="index" :name="repo.name" :description="repo.description" :language="repo.language" :homepage="repo.homepage" :html_url="repo.html_url" :topics="repo.topics"/>
         <projectCard class="italic" name="More Projects soon..."/>
       </div>
       <div v-else class="flex justify-center">
