@@ -1,7 +1,7 @@
 <script setup>
 import scrollComponent from '../components/scrollComponent.vue'
 
-const techs = ['HTML5', 'CSS3', 'JavaScript', 'vue', 'react', 'tailwind', 'mySQL']
+const techs = ['HTML5', 'CSS3', 'JavaScript', 'vue', 'react', 'tailwind', 'mySQL', 'git']
 
 </script>
 
