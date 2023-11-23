@@ -1,6 +1,4 @@
 <script setup>
-let spotify = "https://open.spotify.com/intl-pt/artist/5INjqkS1o8h1imAzPqGZBb"
-
 const handleMouse = (e) => {
   const mouseX = e.clientX;
   const mouseY = e.clientY;
@@ -27,9 +25,8 @@ const handleMouse = (e) => {
     <div>
       <h1 class="text-2xl md:text-4xl font-black text-center">Hi, my name is Lucas.</h1>
     </div>
-    <p class="text-lg md:text-2xl text-center">I love programming, games and
-      <a class="underline decoration-slate-500 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
-        target="_blank" :href="spotify">Tame Impala.</a> Here you will find some projects and learn a little about me.
+    <p class="text-lg md:text-2xl text-center md:px-16">
+      Front-end developer passionate about <span class="decoration-slate-500 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 ">creating intuitive user experiences</span>. Always seeking new challenges and ways to improve my skills. <br/> Here you will find some projects and learn a little about me.
     </p>
     <router-link class="border border-black rounded-md p-2 px-4 m-4 transition hover:scale-110 font-bold md:text-lg"
       to="/about">Enjoy!</router-link>
