@@ -1,4 +1,5 @@
 <script setup>
+import contact from '../components/contact.vue'
 import scrollComponent from '../components/scrollComponent.vue'
 
 const techs = ['HTML5', 'CSS3', 'JavaScript', 'vue', 'react', 'tailwind', 'mySQL', 'git']
@@ -28,9 +29,9 @@ const techs = ['HTML5', 'CSS3', 'JavaScript', 'vue', 'react', 'tailwind', 'mySQL
       <p class="p-3 md:text-lg">Throughout my learning journey, I have developed projects. Each project represents a significant step in my evolution as a programmer, showcasing my ability to apply learned concepts in <strong>practical scenarios.</strong></p>
 
       <p class="italic md:text-lg p-3 self-center">To see my projects click here!</p>
-      <router-link to="/projects" class="border p-2 rounded-md m-4 border-black text-center font-bold md:w-1/12 md:self-center md:text-lg transition hover:scale-110">Projects</router-link>
+      <router-link to="/projects" class="border p-2 rounded-md m-4 border-black text-center font-bold md:self-center md:text-lg transition md:hover:scale-110">Projects</router-link>
 
-      <p class="p-3 md:text-lg"><strong>I am open to collaboration, learning opportunities, and sharing experiences</strong>. Feel free to reach out to me through <a href="" class="underline">GitHub</a> or <a href="" class="underline">Linkedin</a>. Thank you for visiting my portfolio, and I look forward to sharing my programming journey with you!</p>
+      <contact/>
     </section>
   </main>
 </template>
