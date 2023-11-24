@@ -16,9 +16,9 @@ const props = defineProps({
       <h2 class="font-bold uppercase">{{ props.name }}</h2>
       <p v-if="props.description !== undefined" class=" overflow-scroll md:overflow-visible">{{ props.description }}</p>
       <div class="flex flex-wrap py-1 text-stone-500">
-        <p v-for="(topic, index) in props.topics" :key="index">{{ index > 0 ? ', ' : '' }}{{ topic }}</p>
+        <p v-for="(topic, index) in props.topics" :key="index">{{ index > 0 ? `, ` : '' }}{{ topic }}</p>
       </div>
-      <p class="text-stone-500" v-if="props.language !== null && props.language !== undefined">{{ 'Main Language: ' + props.language }}</p>
+      <p class="text-stone-500" v-if="props.language !== null && props.language !== undefined">{{ 'Main Technology: ' + props.language }}</p>
     </div>
     <div class="flex gap-2 justify-end items-center">
       <a class="hover:scale-110 transition" v-if="props.html_url !== null && props.html_url !== undefined" :href="props.html_url" target="_blank" title="link to github repository">
