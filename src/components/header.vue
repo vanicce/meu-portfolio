@@ -23,12 +23,14 @@
   bottom: 0;
   width: 100%;
   height: 2px; /* Espessura do underline */
-  background-color: #1e1e1f; /* Cor do underline normal */
+  background-color: #333; /* Cor do underline normal */
   transform: scaleX(0); /* Inicialmente, o underline está invisível */
   transition: transform 0.3s ease; /* Adiciona uma transição suave */
 }
 
-.element:hover::after {
+.element:hover::after,
+a.router-link-active::after {
   transform: scaleX(1); /* Quando o mouse está sobre o elemento, o underline aparece */
 }
+
 </style>
