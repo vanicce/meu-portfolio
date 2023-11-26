@@ -6,8 +6,6 @@ module.exports = {
     "./src/views/*.vue",
     "./*.html",
     "./src/*.vue",
-    "./src/assets/*.svg",
-    "./public/*.svg"
   ],
   theme: {
     extend: {
