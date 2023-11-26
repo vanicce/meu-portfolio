@@ -18,9 +18,9 @@ const handleMouse = (e) => {
 </script>
 
 <template>
-  <main @mousemove="handleMouse" class="flex flex-col items-center p-4">
+  <main @mousemove="handleMouse" class="flex flex-col items-center p-4 dark:text-[#BBBBBB]">
     <div class="box border-4 rounded-xl border-transparent w-56 h-56 my-4" id="elemento">
-      <img class="select-none rounded-xl" src="../assets/eu3.jpeg" alt="">
+      <img class="select-none rounded-xl" src="https://avatars.githubusercontent.com/u/103083001?v=4" alt="">
     </div>
     <div>
       <h1 class="text-2xl md:text-4xl font-black text-center">Hi, my name is Lucas.</h1>
@@ -28,7 +28,7 @@ const handleMouse = (e) => {
     <p class="text-lg md:text-2xl text-center md:px-16">
       Front-end developer passionate about <span class="decoration-slate-500 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 ">creating intuitive user experiences</span>. Always seeking new challenges and ways to improve my skills. <br/> Here you will find some projects and learn a little about me.
     </p>
-    <router-link class="border border-black rounded-md p-2 px-4 m-4 transition hover:scale-110 font-bold md:text-lg"
+    <router-link class="border border-black rounded-md p-2 px-4 m-4 transition hover:scale-110 font-bold md:text-lg dark:border-[#BBBBBB]"
       to="/about">Enjoy!</router-link>
   </main>
 </template>
