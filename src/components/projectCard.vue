@@ -22,7 +22,7 @@ const props = defineProps({
     </div>
     <div class="flex gap-2 justify-end items-center">
       <a class="hover:scale-110 transition" v-if="props.html_url !== null && props.html_url !== undefined" :href="props.html_url" target="_blank" title="link to github repository">
-        <img width="30" src="../assets/github.svg" alt="">
+        <img width="30" :src="'./github-black.svg'" alt="">
       </a>
       <a class="hover:scale-110 transition" v-if="props.homepage !== null && props.homepage !== undefined" :href="props.homepage" target="_blank"
         title="link to site in production">
