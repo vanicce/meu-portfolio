@@ -21,7 +21,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="flex flex-col px-4 md:px-14">
+  <main class="flex flex-col px-4 md:px-14 dark:text-neutral-300">
     <div class="flex justify-center flex-col mb-10">
       <h2 class="text-center text-xl p-4 font-black md:text-4xl">Main Projects</h2>
       <p class="self-center italic md:text-lg">All projects listed here are updated via the GitHub API (README.md too).</p>
