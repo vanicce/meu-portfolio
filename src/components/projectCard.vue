@@ -11,14 +11,17 @@ const props = defineProps({
 
 <template>
   <div v-if="props.name !== 'lucwx' && props.name !== 'meu-portfolio'"
-    class="border-2 border-gray-300 p-3 rounded-md mb-4 flex flex-col justify-between md:hover:scale-110 ease-in-out duration-300 dark:bg-neutral-800">
-    <img class="rounded-md border border-gray-300 md:mix-blend-luminosity md:hover:mix-blend-normal"
-      :src="'./' + props.name + '.png'" alt="">
+    class="border-2 border-gray-300 p-3 rounded-md mb-4 flex flex-col justify-between md:hover:scale-110 ease-in-out duration-300 dark:bg-neutral-800 md:mix-blend-luminosity md:hover:mix-blend-normal">
+    <a v-if="props.home !== null && props.homepage !== undefined"
+        :href="props.homepage" target="_blank" title="link to github repository">
+        <img class="rounded-md border border-gray-300  "
+        :src="'./' + props.name + '.png'" alt="">
+  </a>
     <div class="flex flex-col items-center py-3">
       <h2 class="font-bold uppercase">{{ props.name }}</h2>
       <p v-if="props.description !== undefined" class=" overflow-scroll md:overflow-visible text-center">{{ props.description }}</p>
-      <div class="flex flex-wrap justify-center py-1 text-stone-500 dark:text-stone-400">
-        <p v-for="(topic, index) in props.topics" :key="index">{{ index > 0 ? `, ` : '' }}{{ topic }}</p>
+      <div class="flex flex-wrap justify-center py-1 text-stone-500 dark:text-stone-100">
+        <p class="m-1 p-1 border dark:border-neutral-200 border-neutral-900 rounded-lg" v-for="(topic, index) in props.topics" :key="index">{{ topic }}</p>
       </div>
       <p class="text-stone-500 dark:text-stone-400" v-if="props.language !== null && props.language !== undefined">{{
         'Main Technology: ' +
@@ -42,7 +45,7 @@ const props = defineProps({
           </g>
         </svg>
       </a>
-      <a class="hover:scale-110 transition" v-if="props.homepage !== null && props.homepage !== undefined"
+      <a class="hover:scale-110 transition" v-if="props.homepage !== null && props.homepage !== undefined && props.homepage !== ''"
         :href="props.homepage" target="_blank" title="link to site in production">
         <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
           stroke-linejoin="round" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
