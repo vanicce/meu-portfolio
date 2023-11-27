@@ -16,8 +16,8 @@ const props = defineProps({
       :src="'./' + props.name + '.png'" alt="">
     <div class="flex flex-col items-center py-3">
       <h2 class="font-bold uppercase">{{ props.name }}</h2>
-      <p v-if="props.description !== undefined" class=" overflow-scroll md:overflow-visible">{{ props.description }}</p>
-      <div class="flex flex-wrap py-1 text-stone-500 dark:text-stone-400">
+      <p v-if="props.description !== undefined" class=" overflow-scroll md:overflow-visible text-center">{{ props.description }}</p>
+      <div class="flex flex-wrap justify-center py-1 text-stone-500 dark:text-stone-400">
         <p v-for="(topic, index) in props.topics" :key="index">{{ index > 0 ? `, ` : '' }}{{ topic }}</p>
       </div>
       <p class="text-stone-500 dark:text-stone-400" v-if="props.language !== null && props.language !== undefined">{{
