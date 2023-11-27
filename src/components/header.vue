@@ -1,12 +1,33 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 let isDark = ref(false)
 
+let darkTheme
+
 const toggleTheme = () => {
   isDark.value = !isDark.value
+  darkTheme = isDark.value ? 'dark' : 'light'
   document.documentElement.classList.toggle('dark', isDark.value)
+
+  localStorage.setItem('theme', darkTheme)
 }
+
+onMounted(() => {
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+  let theme = localStorage.getItem('theme')
+
+  if (systemTheme === 'dark' || (!darkTheme && systemTheme)) {
+    document.documentElement.classList.add('dark')
+    isDark.value = true
+  }
+
+  if (theme) {
+    isDark.value = theme === 'dark'
+    document.documentElement.classList.toggle('dark', isDark.value)
+  }
+})
+
 </script>
 
 <template>
