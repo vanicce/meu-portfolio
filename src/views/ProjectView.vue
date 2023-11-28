@@ -16,7 +16,9 @@ const defineProjects = async () => {
 }
 
 onMounted(() => {
-  defineProjects()
+  setTimeout(() => {
+    defineProjects()
+  }, 1500);
 })
 </script>
 
@@ -26,15 +28,39 @@ onMounted(() => {
       <h2 class="text-center text-xl p-4 font-black md:text-4xl">Main Projects</h2>
       <p class="self-center italic md:text-lg">All projects listed here are updated via the GitHub API (README.md too).</p>
     </div>
-    <section>
+    <section class="break-inside-avoid">
       <div v-if="defineProjects.error">
         <p>No data available.</p>
       </div>
-      <div v-else-if="state.projects.length > 0" class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10 md:mb-10">
-        <projectCard v-for="(repo, index) in state.projects" :key="index" :name="repo.name" :description="repo.description" :language="repo.language" :homepage="repo.homepage" :html_url="repo.html_url" :topics="repo.topics"/>
+      <div v-else-if="state.projects.length > 0" class="columns-1 sm:columns-2 lg:columns-3 gap-8">
+        <projectCard class="break-inside-avoid" v-for="(repo, index) in state.projects" :key="index" :name="repo.name" :description="repo.description" :language="repo.language" :homepage="repo.homepage" :html_url="repo.html_url" :topics="repo.topics"/>
       </div>
-      <div v-else class="flex justify-center">
-        <h1 class="text-5xl self-center">loading...</h1>
+      <div v-else>
+        <div class="flex flex-wrap justify-center gap-8 ">
+          <div class="bg-neutral-400 dark:bg-neutral-800 w-96 h-96 rounded-3xl animate-pulse">
+            <div class=" bg-neutral-300 dark:bg-neutral-700 w-full h-2/4 rounded-t-xl">
+            </div>
+            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 m-4"></div>
+            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 m-4"></div>
+            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 mt-20 mx-4"></div>
+          </div>
+
+          <div class="bg-neutral-400 dark:bg-neutral-800 w-96 h-96 rounded-3xl animate-pulse">
+            <div class=" bg-neutral-300 dark:bg-neutral-700 w-full h-2/4 rounded-t-xl">
+            </div>
+            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 m-4"></div>
+            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 m-4"></div>
+            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 mt-20 mx-4"></div>
+          </div>
+
+          <div class="bg-neutral-400 dark:bg-neutral-800 w-96 h-96 rounded-3xl animate-pulse">
+            <div class=" bg-neutral-300 dark:bg-neutral-700 w-full h-2/4 rounded-t-xl">
+            </div>
+            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 m-4"></div>
+            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 m-4"></div>
+            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 mt-20 mx-4"></div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
