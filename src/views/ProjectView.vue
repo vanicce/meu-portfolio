@@ -1,6 +1,7 @@
 <script setup>
 import { reactive, onMounted } from 'vue'
 import projectCard from '../components/projectCard.vue';
+import skelleton  from '../components/skelleton.vue'
 
 const state = reactive({
   projects: []
@@ -37,29 +38,9 @@ onMounted(() => {
       </div>
       <div v-else>
         <div class="flex flex-wrap justify-center gap-8 ">
-          <div class="bg-neutral-400 dark:bg-neutral-800 w-96 h-96 rounded-3xl animate-pulse">
-            <div class=" bg-neutral-300 dark:bg-neutral-700 w-full h-2/4 rounded-t-xl">
-            </div>
-            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 m-4"></div>
-            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 m-4"></div>
-            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 mt-20 mx-4"></div>
-          </div>
-
-          <div class="bg-neutral-400 dark:bg-neutral-800 w-96 h-96 rounded-3xl animate-pulse">
-            <div class=" bg-neutral-300 dark:bg-neutral-700 w-full h-2/4 rounded-t-xl">
-            </div>
-            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 m-4"></div>
-            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 m-4"></div>
-            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 mt-20 mx-4"></div>
-          </div>
-
-          <div class="bg-neutral-400 dark:bg-neutral-800 w-96 h-96 rounded-3xl animate-pulse">
-            <div class=" bg-neutral-300 dark:bg-neutral-700 w-full h-2/4 rounded-t-xl">
-            </div>
-            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 m-4"></div>
-            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 m-4"></div>
-            <div class="bg-neutral-300 dark:bg-neutral-700 h-3 mt-20 mx-4"></div>
-          </div>
+          <skelleton/>
+          <skelleton/>
+          <skelleton/>
         </div>
       </div>
     </section>
