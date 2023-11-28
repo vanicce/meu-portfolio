@@ -11,7 +11,7 @@ const props = defineProps({
 
 <template>
   <div v-if="props.name !== 'lucwx' && props.name !== 'meu-portfolio'" class="rounded-3xl flex flex-col justify-between md:hover:scale-105 ease-in-out mb-4 duration-300 bg-white dark:bg-neutral-800">
-    <div class="">
+    <div>
       <h2 class="font-bold capitalize absolute p-3 text-white">{{ props.name }}</h2>
       <a v-if="props.home !== null && props.homepage !== undefined " :href="props.homepage" target="_blank" title="link to github repository">
         <img class="object-contain rounded-t-2xl" :src="'./' + props.name + '.png'" alt="">
@@ -20,7 +20,7 @@ const props = defineProps({
     <div class="flex flex-col items-center py-3">
       <p v-if="props.description !== undefined" class=" overflow-scroll md:overflow-visible text-center">{{ props.description }}</p>
       <div class="flex flex-wrap justify-center py-1 text-stone-900 dark:text-stone-100">
-        <p class="m-1 p-1 border dark:border-neutral-200 border-neutral-900 rounded-lg capitalize text-sm md:text-base" v-for="(topic, index) in props.topics" :key="index">{{ topic }}</p>
+        <p class="m-1 p-1 px-4 border dark:border-neutral-200 border-neutral-900 rounded-2xl capitalize text-sm md:text-base" v-for="(topic, index) in props.topics">{{ topic }}</p>
       </div>
       <p class="text-stone-500 dark:text-stone-400 md:text-lg" v-if="props.language !== null && props.language !== undefined">{{ 'Main Technology: ' + props.language }}</p>
     </div>
