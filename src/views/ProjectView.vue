@@ -27,7 +27,7 @@ onMounted(() => {
   <main class="flex flex-col px-4 md:px-14 dark:text-neutral-300">
     <div class="flex justify-center flex-col mb-10">
       <h2 class="text-center text-xl p-4 font-black md:text-4xl">Main Projects</h2>
-      <p class="self-center italic md:text-lg">All projects listed here are updated via the GitHub API (README.md too).</p>
+      <p class="self-center italic md:text-lg">All projects listed here are updated via the <a href="https://docs.github.com/pt/rest/quickstart?apiVersion=2022-11-28" class="underline" target="_blank">GitHub API</a>.</p>
     </div>
     <section class="break-inside-avoid">
       <div v-if="defineProjects.error">
@@ -37,7 +37,7 @@ onMounted(() => {
         <projectCard class="break-inside-avoid" v-for="(repo, index) in state.projects" :key="index" :name="repo.name" :description="repo.description" :language="repo.language" :homepage="repo.homepage" :html_url="repo.html_url" :topics="repo.topics"/>
       </div>
       <div v-else>
-        <div class="flex flex-wrap justify-center gap-8 ">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <skelleton/>
           <skelleton/>
           <skelleton/>
