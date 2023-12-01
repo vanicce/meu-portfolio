@@ -11,10 +11,10 @@ const props = defineProps({
 
 <template>
   <div v-if="props.name !== 'lucwx' && props.name !== 'meu-portfolio'" class="rounded-3xl flex flex-col justify-between md:hover:scale-105 ease-in-out mb-6 duration-300 bg-white dark:bg-neutral-800 shadow-md">
-    <div>
-      <h2 class="font-bold capitalize absolute p-3 text-white">{{ props.name }}</h2>
+    <div class="relative pt-[50%] pb-2">
+      <h2 class="font-bold capitalize absolute z-50 top-0 p-3 text-white">{{ props.name }}</h2>
       <a v-if="props.home !== null && props.homepage !== undefined " :href="props.homepage" target="_blank" title="link to github repository">
-        <img class="object-contain rounded-t-2xl" :src="'./' + props.name + '.png'" alt="">
+        <img class="object-contain rounded-t-2xl absolute top-0 left-0" :src="'./' + props.name + '.png'" alt="">
       </a>
     </div>
     <div class="flex flex-col items-center py-3">
