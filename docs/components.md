@@ -9,7 +9,7 @@ a component that, when clicked, takes the user to the beginning of the page:
 
 <div>
 
-```js
+```vue
 <script setup>
 import { ref } from 'vue'
 
