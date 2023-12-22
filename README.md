@@ -4,6 +4,9 @@
 - <a href="#how-to-run">How To Run</a>
 - <a href="#examples">Examples</a>
 
+You can see a explication above components here:
+- <a href="./docs/components.md">Components</a>
+
 ## Technologies Used
 HTML, CSS, JavaScript, Vue3 (Vue Router), Tailwind CSS, NPM (Node Package Manager) and Vite.
 
