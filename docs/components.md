@@ -40,6 +40,7 @@ const toTop = () => {
 
 ### Carrousel
 a carousel component with small components showing the technologies I know about:
+<hr>
 
 Component: scrollComponent.vue
 
@@ -64,6 +65,8 @@ Component: scrollComponent.vue
 </template>
 ```
 View: AboutView.vue
+<hr>
+<br>
 
 ```vue
 <script setup>
@@ -86,6 +89,8 @@ const techs = ['HTML5', 'CSS3', 'JavaScript', 'vue', 'react', 'tailwind', 'mySQL
 </template>
 
 ```
+<hr>
+<br>
 
 ```css
 <style>
