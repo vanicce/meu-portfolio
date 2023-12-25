@@ -53,11 +53,11 @@ Component: scrollComponent.vue
 
 <template>
   <div class=". . .">
-    // for all props define a image
+    <!-- for all props define a image -->
     <img :src="'./' + props.tech + '.svg'" alt="" srcset="">
-    // search the technologies in props
+    <!-- search the technologies in props -->
     <a :href="'https://google.com/search?q=' +  props.tech" target="_blank">
-    // print in document the tech
+    <!-- print in document the tech -->
       <p class=". . .">{{ props.tech }}</p>
     </a>
   </div>
@@ -78,7 +78,7 @@ const techs = ['HTML5', 'CSS3', 'JavaScript', 'vue', 'react', 'tailwind', 'mySQL
 <template>
     <div class="overflow-hidden">
       <div class="scroller_inner">
-        // rendering components by nums of techs and passing the props to scrollComponent
+        <!-- rendering components by nums of techs and passing the props to scrollComponent -->
         <scrollComponent v-for="tech in techs" :tech="tech"/>
         <scrollComponent v-for="tech in techs" :tech="tech"/>
       </div>
