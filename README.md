@@ -1,11 +1,11 @@
 # lucas-porfolio
 
 ## Index
-- <a href="#how-to-run">How To Run</a>
-- <a href="#examples">Examples</a>
+- [How To Run](#how-to-run)
+- [Examples](#examples)
 
 You can see a explication above components here:
-- <a href="./docs/components.md">Components</a>
+- [Components](./docs/components.md)
 
 ## Technologies Used
 HTML, CSS, JavaScript, Vue3 (Vue Router), Tailwind CSS, NPM (Node Package Manager) and Vite.
