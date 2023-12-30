@@ -15,9 +15,7 @@ HTML, CSS, JavaScript, Vue3 (Vue Router), Tailwind CSS, NPM (Node Package Manage
 ### 1. Clone Repository
 ```sh
 git clone https://github.com/lucwx/meu-portfolio.git
-```
 
-```sh
 cd meu-portfolio
 ```
 
@@ -34,10 +32,20 @@ npm run dev
 ```
 ## Examples
 
-<img style="display: block; margin: 15px auto; width: 90%;" src="./Assets/example_page_dark.png">
-<p align="center" style="font-style: italic;">Desktop Main Page on Dark Theme.</p>
+<p align="center">
+  <img style="width: 90%;" src="./Assets/example_page_dark.png">
+</p>
+
+<p align="center" style="font-style: italic;">
+  Desktop Main Page on Dark Theme.
+</p>
 
 <hr>
 
-<img style="display: block; margin: 15px auto; width: 40%;" src="./Assets/example_page_light.png">
-<p align="center" style="font-style: italic;">Mobile Main Page on Light Theme.</p>
+<p align="center">
+  <img style="width: 40%;" src="./Assets/example_page_light.png">
+</p>
+
+<p align="center" style="font-style: italic;">
+  Mobile Main Page on Light Theme.
+</p>
