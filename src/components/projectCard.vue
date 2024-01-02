@@ -10,7 +10,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div v-if="props.name !== 'lucwx' && props.name !== 'meu-portfolio'" class="rounded-3xl flex flex-col justify-between md:hover:scale-105 ease-in-out mb-6 duration-300 bg-white dark:bg-neutral-800 shadow-md">
+  <div v-if="props.name === 'pomodoro' || props.name === 'Github-card' || props.name === 'indie-dev' || props.name === 'projeto-inicial-spotify' || props.name === 'finans'" class="rounded-3xl flex flex-col justify-between md:hover:scale-105 ease-in-out mb-6 duration-300 bg-white dark:bg-neutral-800 shadow-md">
     <div class="relative pt-[50%] pb-2">
       <h2 class="font-bold capitalize absolute z-50 top-0 p-3 text-white">{{ props.name }}</h2>
       <a v-if="props.home !== null && props.homepage !== undefined " :href="props.homepage" target="_blank" title="link to github repository">

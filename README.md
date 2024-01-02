@@ -1,29 +1,51 @@
 # lucas-porfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+## Index
+- [How To Run](#how-to-run)
+- [Examples](#examples)
 
-## Recommended IDE Setup
+You can see a explication above components here:
+- [Components](./docs/components.md)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Technologies Used
+HTML, CSS, JavaScript, Vue3 (Vue Router), Tailwind CSS, NPM (Node Package Manager) and Vite.
 
-## Customize configuration
+## How To Run
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### 1. Clone Repository
+```sh
+git clone https://github.com/lucwx/meu-portfolio.git
 
-## Project Setup
+cd meu-portfolio
+```
+
+### 2. Install Dependencies
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 3. Run Project Locally
 
 ```sh
 npm run dev
 ```
+## Examples
 
-### Compile and Minify for Production
+<p align="center">
+  <img style="width: 90%;" src="https://raw.githubusercontent.com/lucwx/web-screenshot/main/lucas-portfolio-navy.vercel.app/lucas-portfolio-navy.vercel.app_desktop.jpeg">
+</p>
 
-```sh
-npm run build
-```
+<p align="center" style="font-style: italic;">
+  Desktop Main Page on Dark Theme.
+</p>
+
+<hr>
+
+<p align="center">
+  <img style="width: 40%;" src="https://raw.githubusercontent.com/lucwx/web-screenshot/main/lucas-portfolio-navy.vercel.app/lucas-portfolio-navy.vercel.app_mobile.jpeg">
+</p>
+
+<p align="center" style="font-style: italic;">
+  Mobile Main Page on Light Theme.
+</p>
