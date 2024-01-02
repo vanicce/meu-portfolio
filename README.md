@@ -1,4 +1,4 @@
-# lucas-porfolio
+# lucas-portfolio
 
 ## Index
 - [How To Run](#how-to-run)
