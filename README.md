@@ -33,7 +33,7 @@ npm run dev
 ## Examples
 
 <p align="center">
-  <img style="width: 90%;" src="https://raw.githubusercontent.com/lucwx/web-screenshot/main/lucas-portfolio-navy.vercel.app/lucas-portfolio-navy.vercel.app_desktop.jpeg">
+  <img style="width: 90%;" src="https://raw.githubusercontent.com/lucwx/web-screenshot/main/screenshots/lucas-portfolio-navy.vercel.app/lucas-portfolio-navy.vercel.app_desktop.jpeg">
 </p>
 
 <p align="center" style="font-style: italic;">
@@ -43,7 +43,7 @@ npm run dev
 <hr>
 
 <p align="center">
-  <img style="width: 40%;" src="https://raw.githubusercontent.com/lucwx/web-screenshot/main/lucas-portfolio-navy.vercel.app/lucas-portfolio-navy.vercel.app_mobile.jpeg">
+  <img style="width: 40%;" src="https://raw.githubusercontent.com/lucwx/web-screenshot/main/screenshots/lucas-portfolio-navy.vercel.app/lucas-portfolio-navy.vercel.app_mobile.jpeg">
 </p>
 
 <p align="center" style="font-style: italic;">
