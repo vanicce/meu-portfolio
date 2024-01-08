@@ -37,7 +37,7 @@ npm run dev
 </p>
 
 <p align="center" style="font-style: italic;">
-  Desktop Main Page on Dark Theme.
+  Desktop Main Page.
 </p>
 
 <hr>
@@ -47,5 +47,5 @@ npm run dev
 </p>
 
 <p align="center" style="font-style: italic;">
-  Mobile Main Page on Light Theme.
+  Mobile Main Page.
 </p>
