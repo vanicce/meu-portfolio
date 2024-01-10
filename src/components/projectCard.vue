@@ -9,15 +9,14 @@ const props = defineProps({
 })
 
 let link = ''
-if (props.homepage !== undefined && props.homepage !== '') {
+if (props.homepage) {
   link = new URL(props.homepage).hostname
 }
 
 </script>
 
 <template>
-  <div
-    v-if="props.homepage !== undefined && props.homepage !== '' && props.name !== 'lucwx' && props.name !== 'meu-portfolio'"
+  <div v-if="props.homepage && props.name !== 'meu-portfolio'"
     class="rounded-3xl flex flex-col justify-between md:hover:scale-105 mb-6 duration-300 bg-white dark:bg-neutral-800 shadow-md">
     <div class="relative pt-[50%] mb-5">
       <a :href="props.homepage" target="_blank" title="link to github repository">
@@ -28,18 +27,18 @@ if (props.homepage !== undefined && props.homepage !== '') {
     </div>
     <div class="flex flex-col items-center py-3">
       <p class="font-bold capitalize text-center p-3">{{ props.name }}</p>
-      <p v-if="props.description !== undefined" class=" overflow-scroll md:overflow-visible text-center">{{
+      <p v-if="props.description" class=" overflow-scroll md:overflow-visible text-center">{{
         props.description }}</p>
       <div class="flex flex-wrap justify-center py-1 text-stone-900 dark:text-stone-100">
         <p class="m-1 p-1 px-4 border dark:border-neutral-200 border-neutral-900 rounded-2xl capitalize text-sm md:text-base"
           v-for="topic in props.topics">{{ topic }}</p>
       </div>
-      <p class="text-stone-500 dark:text-stone-400 md:text-lg"
-        v-if="props.language !== null && props.language !== undefined">{{ 'Main Technology: ' + props.language }}</p>
+      <p class="text-stone-500 dark:text-stone-400 md:text-lg" v-if="props.language">{{ 'Main Technology: ' +
+        props.language }}</p>
     </div>
     <div class="flex gap-2 justify-end items-center pr-4 pb-4">
-      <a class="hover:scale-110 transition" v-if="props.html_url !== null && props.html_url !== undefined"
-        :href="props.html_url" target="_blank" title="link to github repository">
+      <a class="hover:scale-110 transition" v-if="props.html_url" :href="props.html_url" target="_blank"
+        title="link to github repository">
         <svg width="30px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -54,15 +53,15 @@ if (props.homepage !== undefined && props.homepage !== '') {
           </g>
         </svg>
       </a>
-      <a class="hover:scale-110 transition" :href="props.homepage"
-        target="_blank" title="link to site in production">
+      <a class="hover:scale-110 transition" :href="props.homepage" target="_blank" title="link to site in production">
         <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
           stroke-linejoin="round" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-        <polyline points="15 3 21 3 21 9"></polyline>
-        <line x1="10" y1="14" x2="21" y2="3"></line>
-      </svg>
-    </a>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+    </div>
   </div>
-</div></template>
+</template>
 
