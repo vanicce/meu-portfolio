@@ -9,7 +9,7 @@ const state = reactive({
 
 const defineProjects = async () => {
   try {
-    const response = await fetch('https://api.github.com/users/lucwx/repos')
+    const response = await fetch('https://api.github.com/users/venicce/repos')
     state.projects = await response.json()
   } catch (error) {
     alert('an error ocurred in repos')
