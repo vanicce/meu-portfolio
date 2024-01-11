@@ -14,7 +14,7 @@ HTML, CSS, JavaScript, Vue3 (Vue Router), Tailwind CSS, NPM (Node Package Manage
 
 ### 1. Clone Repository
 ```sh
-git clone https://github.com/lucwx/meu-portfolio.git
+git clone https://github.com/vanicce/meu-portfolio.git
 
 cd meu-portfolio
 ```
