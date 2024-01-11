@@ -5,7 +5,7 @@
     </div>
     <a class="underline text-base" href="mailto:ssilvalucas2004@gmail.com?subject=Olá, vi seu portfólio" target="_blank">ssilvalucas2004@gmail.com</a>
     <div class="flex items-center justify-center gap-1">
-      <a href="https://github.com/lucwx" target="_blank" class="hover:scale-110 transition">
+      <a href="https://github.com/vanicce" target="_blank" class="hover:scale-110 transition">
         <svg width="33px" height="33px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <g id="Page-1" stroke="none" stroke-width="1" class="fill-neutral-950 dark:fill-white" fill-rule="evenodd">
