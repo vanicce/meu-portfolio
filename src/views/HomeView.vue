@@ -9,8 +9,8 @@ const handleMouse = (e) => {
   const deltaX = mouseX - centerX;
   const deltaY = mouseY - centerY;
 
-  const angleX = deltaY / centerY * 50;
-  const angleY = -deltaX / centerX * 50;
+  const angleX = deltaY / centerY * 75;
+  const angleY = -deltaX / centerX * 75;
 
   document.getElementById('elemento').style.transform = `rotate3d(1, 0, 0, ${angleX}deg) rotate3d(0, 1, 0, ${angleY}deg)`;
 }
@@ -26,7 +26,7 @@ const handleMouse = (e) => {
       <h1 class="text-2xl md:text-4xl font-black text-center">Hi, my name is Lucas.</h1>
     </div>
     <p class="text-lg md:text-2xl text-center md:px-16">
-      Front-end developer passionate about <span class="decoration-slate-500 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 ">creating intuitive user experiences</span>. Always seeking new challenges and ways to improve my skills. <br/> Here you will find some projects and learn a little about me.
+      Front-end developer passionate about <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 font-black">creating intuitive user experiences</span>. Always seeking new challenges and ways to improve my skills. <br/> Here you will find some projects and learn a little about me.
     </p>
     <router-link class="border border-black rounded-md p-2 px-4 m-4 transition hover:scale-110 font-bold md:text-lg dark:border-[#BBBBBB]"
       to="/about">Enjoy!</router-link>
