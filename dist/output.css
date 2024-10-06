@@ -854,6 +854,18 @@ video {
   border-width: 4px;
 }
 
+.border-\[15px\] {
+  border-width: 15px;
+}
+
+.border-\[10px\] {
+  border-width: 10px;
+}
+
+.border-\[5px\] {
+  border-width: 5px;
+}
+
 .border-l {
   border-left-width: 1px;
 }
@@ -889,6 +901,10 @@ video {
 .border-zinc-400 {
   --tw-border-opacity: 1;
   border-color: rgb(161 161 170 / var(--tw-border-opacity));
+}
+
+.border-\[\] {
+  border-color: ;
 }
 
 .bg-neutral-100 {
